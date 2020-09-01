@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Walker's Restaurant</title>
+<h1>Walker's Restaurant</h1>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<h2>Menu</h2>
+
+<script src="RestaurantArray.js"></script>
+
+<audio id="cafemusic">
+	<source src="cafemusic.mp3" type="audio/mpeg">
+</audio>
+<script>
+var myMusic = document.getElementById("cafemusic");
+function playAudio() {
+	myMusic.play();
+}
+function pauseAudio() {
+	myMusic.pause();
+}
+</script>
+
+<div id="body">
+
+<button onclick="submitOrder()">Place Order</button>
+<button onclick="playAudio()">Play That Funky Music</button>
+<button onclick="pauseAudio()">Pause</button>
+
+<table>
+<tr>
+	<tr>
+	<th></th>
+	<th style="width:10%">Name</th>
+	<th style="width:70%">Description</th>
+	<th style="width:20%">Price</th>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item0box" class="chx" name="Asparagus"></td>
+<td><script>document.write(ItemName[0] + " ");</script></td>
+<td><script>document.write(ItemDescription[0] + " ");</script></td>
+<td><script>document.write(ItemPrice[0] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item1box" class="chx" name="Baked Potato"></td>
+<td><script>document.write(ItemName[1] + " ");</script></td>
+<td><script>document.write(ItemDescription[1] + " ");</script></td>
+<td><script>document.write(ItemPrice[1] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item2box" class="chx" name="Broccoli"></td>
+<td><script>document.write(ItemName[2] + " ");</script></td>
+<td><script>document.write(ItemDescription[2] + " ");</script></td>
+<td><script>document.write(ItemPrice[2] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item3box" class="chx" name="Carrots"></td>
+<td><script>document.write(ItemName[3] + " ");</script></td>
+<td><script>document.write(ItemDescription[3] + " ");</script></td>
+<td><script>document.write(ItemPrice[3] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item4box" class="chx" name="Chicken Fingers"></td>
+<td><script>document.write(ItemName[4] + " ");</script></td>
+<td><script>document.write(ItemDescription[4] + " ");</script></td>
+<td><script>document.write(ItemPrice[4] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item5box" class="chx" name="Cordon Bleu"></td>
+<td><script>document.write(ItemName[5] + " ");</script></td>
+<td><script>document.write(ItemDescription[5] + " ");</script></td>
+<td><script>document.write(ItemPrice[5] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item6box" class="chx" name="French Fries"></td>
+<td><script>document.write(ItemName[6] + " ");</script></td>
+<td><script>document.write(ItemDescription[6] + " ");</script></td>
+<td><script>document.write(ItemPrice[6] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item7box" class="chx" name="Green Beans"></td>
+<td><script>document.write(ItemName[7] + " ");</script></td>
+<td><script>document.write(ItemDescription[7] + " ");</script></td>
+<td><script>document.write(ItemPrice[7] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item8box" class="chx" name="Hamburger"></td>
+<td><script>document.write(ItemName[8] + " ");</script></td>
+<td><script>document.write(ItemDescription[8] + " ");</script></td>
+<td><script>document.write(ItemPrice[8] + " ");</script></td>
+</script>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="item9box" class="chx" name="Lasagna"></td>
+<td><script>document.write(ItemName[9] + " ");</script></td>
+<td><script>document.write(ItemDescription[9] + " ");</script></td>
+<td><script>document.write(ItemPrice[9] + " ");</script></td>
+</script>
+</tr>
+
+</table>
+
+<button onclick="checkall()">Check All</button>
+<button onclick="uncheckall()">Uncheck All</button>
+
+</div>
+
+<div id = "bill">
+<button onclick="goBack()">Next Order</button>
+<button onclick="playAudio()">Play That Funky Music</button>
+<button onclick="pauseAudio()">Pause</button>
+<br>
+<div id="actualBill"><br>
+</div>
+<div id="tablesetting">
+<img src="SaladFork.gif" alt="Salad Fork" style="width:5%">
+<img src="Fork.gif" alt="Fork" style="width:5%">
+<img src="Platter.jpg" alt="Platter" style="width:65%;z-index:-1">
+<img src="Knife.gif" alt="Knife" style="width:5%">
+<img src="Spoon.gif" alt="Spoon" style="width:5%">
+<img src="SoupSpoon.gif" alt="Soup Spoon" style="width:5%">
+</div>
+</div>
+
+<script>
+var y = document.getElementById("bill");
+	y.style.display = "none";
+</script>
+
+<div id="asparagusPic" onclick="munch0()">
+<img src="Asparagus.gif" style="position:absolute;left:600px;top:200px;">
+</div>
+<script>
+var z = document.getElementById("asparagusPic");
+	z.style.display = "none";
+</script>
+
+<div id="potatoPic" onclick="munch1()">
+<img src="BakedPotatoe.gif" style="position:absolute;left:700px;top:300px;">
+</div>
+<script>
+var z = document.getElementById("potatoPic");
+	z.style.display = "none";
+</script>
+
+<div id="broccoliPic" onclick="munch2()">
+<img src="Broccoli.gif" style="position:absolute;left:700px;top:400px;">
+</div>
+<script>
+var z = document.getElementById("broccoliPic");
+	z.style.display = "none";
+</script>
+
+<div id="carrotPic" onclick="munch3()">
+<img src="Carrots.gif" style="position:absolute;left:480px;top:450px;">
+</div>
+<script>
+var z = document.getElementById("carrotPic");
+	z.style.display = "none";
+</script>
+
+<div id="chickenfingersPic" onclick="munch4()">
+<img src="ChickenFingers.gif" style="position:absolute;left:490px;top:600px;">
+</div>
+<script>
+var z = document.getElementById("chickenfingersPic");
+	z.style.display = "none";
+</script>
+
+<div id="cordonPic" onclick="munch5()">
+<img src="CordonBleu.gif" style="position:absolute;left:800px;top:650px;">
+</div>
+<script>
+var z = document.getElementById("cordonPic");
+	z.style.display = "none";
+</script>
+
+<div id="fryPic" onclick="munch6()">
+<img src="FrenchFries.gif" style="position:absolute;left:300px;top:370px;">
+</div>
+<script>
+var z = document.getElementById("fryPic");
+	z.style.display = "none";
+</script>
+
+<div id="greenbeanPic" onclick="munch7()">
+<img src="GreenBeans.gif" style="position:absolute;left:640px;top:470px;">
+</div>
+<script>
+var z = document.getElementById("greenbeanPic");
+	z.style.display = "none";
+</script>
+
+<div id="burgerPic" onclick="munch8()">
+<img src="Hamburger.gif" style="position:absolute;left:670px;top:630px;">
+</div>
+<script>
+var z = document.getElementById("burgerPic");
+	z.style.display = "none";
+</script>
+
+<div id="lasagnaPic" onclick="munch9()">
+<img src="lasagna.gif" style="position:absolute;left:850px;top:490px;">
+</div>
+<script>
+var z = document.getElementById("lasagnaPic");
+	z.style.display = "none";
+</script>
+
+<button id="funLink" onclick="funLink()" target="_blank">Click Me!</button>
+
+</body>
+
+</html>
